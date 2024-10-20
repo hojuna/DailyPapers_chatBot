@@ -1,5 +1,5 @@
 # Hugging Face DailyPaper_abstract Translator
-##<결과 사진>
+## <결과 사진>
 
 ![Hugging Face Papers](https://github.com/user-attachments/assets/a2019acc-b20f-465b-838a-eb5e9bcd086e)
 
