@@ -20,9 +20,7 @@ HuggingFace에서 매일 업데이트되는 논문들을 크롤링하고, 해당
   - google.generativeai
   - PyPDF2
   - beautifulsoup4
-  - selenium
   - requests
-  - python-dotenv
 
 ### 설치 방법
 
@@ -39,16 +37,17 @@ pip install -r requirements.txt
 streamlit run main.py
 ```
 
-![시작 화면](./images/api_key.png)
-![예시 이미지1](./images/1.png)
-![예시 이미지2](./images/2.png)
-
 ## 사용 방법
 
 1. 웹 인터페이스에 접속하여 Gemini API 키를 입력합니다.
 2. 사이드바에서 원하는 논문을 선택합니다.
 3. 선택한 논문에 대해 AI 챗봇과 대화를 시작합니다.
 4. 필요한 경우 직접 PDF 파일을 업로드하여 분석할 수도 있습니다.
+
+## 예시 이미지
+![시작 화면](./images/api_key.png)
+![예시 이미지1](./images/1.png)
+![예시 이미지2](./images/2.png)
 
 ## 프로젝트 구조
 

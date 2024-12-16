@@ -2,18 +2,6 @@ import os
 import re
 import requests
 from bs4 import BeautifulSoup
-from selenium import webdriver
-import time
-from reportlab.lib.pagesizes import letter, landscape
-from reportlab.pdfgen import canvas
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
-from datetime import datetime
-import textwrap
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
 
 class PaperCrawler:
     def __init__(self):

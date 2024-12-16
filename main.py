@@ -3,7 +3,6 @@ import time
 from crawl import PaperCrawler
 from gem_API import AIChat
 import os
-from dotenv import load_dotenv
 # 스트림릿 페이지 기본 설정
 st.set_page_config(page_title="챗봇", page_icon="🤖")
 
@@ -67,6 +66,10 @@ if st.session_state.api_key:
     # 사이드바에 타이틀 버튼 표시
     st.sidebar.header("크롤링된 타이틀")
 
+    # 타일 상단에 기본 경로 설정
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    PDF_DIR = os.path.join(BASE_DIR, "papers_pdf")
+
     # 타이틀 버튼들
     for title in crawled_titles:
         button_disabled = st.session_state.conversation_active and st.session_state.selected_title != title
@@ -75,9 +78,12 @@ if st.session_state.api_key:
             st.session_state.conversation_active = True
             st.session_state.selected_title = title
             
-            # PDF 파일 경로 생성
-            pdf_path = f"/Users/ihojun/project/DailyPapers_in_hug/papers_pdf/{title}.pdf"
-            
+            # PDF 저장 경로 생성
+            pdf_path = os.path.join(PDF_DIR, f"{title}.pdf")
+
+            # PDF 디렉토리가 없으면 생성
+            os.makedirs(PDF_DIR, exist_ok=True)
+
             # PDF 파일 존재 확인
             if os.path.exists(pdf_path):
                 # PDF 파일 읽기
